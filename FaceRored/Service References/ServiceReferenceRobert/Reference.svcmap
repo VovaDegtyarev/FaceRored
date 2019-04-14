@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1180c6c4-2a17-4974-8bdf-53ee1fd1d28d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8001/Robert" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Robert.wsdl" MetadataType="Wsdl" ID="eb8d7617-68f6-4455-8c7e-150a6adcf27b" SourceId="1" SourceUrl="http://localhost:8001/Robert?wsdl" />
+    <MetadataFile FileName="Robert.xsd" MetadataType="Schema" ID="ebaa531c-99b3-4547-a4a6-972239348b99" SourceId="1" SourceUrl="http://localhost:8001/Robert?xsd=xsd3" />
+    <MetadataFile FileName="Robert1.xsd" MetadataType="Schema" ID="7e065c47-3505-483c-9ad7-90f34bcdf5fb" SourceId="1" SourceUrl="http://localhost:8001/Robert?xsd=xsd1" />
+    <MetadataFile FileName="Robert2.xsd" MetadataType="Schema" ID="aa3c0ab0-d8c1-4c17-9429-ece88f281b77" SourceId="1" SourceUrl="http://localhost:8001/Robert?xsd=xsd0" />
+    <MetadataFile FileName="Robert.disco" MetadataType="Disco" ID="161beb26-0717-44c2-9719-ee2429fe6272" SourceId="1" SourceUrl="http://localhost:8001/Robert?disco" />
+    <MetadataFile FileName="Robert3.xsd" MetadataType="Schema" ID="718570fc-c2e2-4d6f-91fd-3aad85b60257" SourceId="1" SourceUrl="http://localhost:8001/Robert?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Robert_KC11" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Robert_KC11" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Data_WCF_Limits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diameter_max" type="xs:float" />
+      <xs:element minOccurs="0" name="diameter_min" type="xs:float" />
+      <xs:element minOccurs="0" name="ovality_max" type="xs:float" />
+      <xs:element minOccurs="0" name="straightness_max" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data_WCF_Limits" nillable="true" type="tns:Data_WCF_Limits" />
+  <xs:complexType name="Sum_WCF_Data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sca" nillable="true" type="tns:State_Communication_Anybus" />
+      <xs:element minOccurs="0" name="scz" nillable="true" type="tns:State_Communication_Zumbach" />
+      <xs:element minOccurs="0" name="wcf_measure_auto" nillable="true" type="tns:Data_WCF_Result" />
+      <xs:element minOccurs="0" name="wcf_measure_client" nillable="true" type="tns:Data_WCF_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sum_WCF_Data" nillable="true" type="tns:Sum_WCF_Data" />
+  <xs:complexType name="State_Communication_Anybus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="is_alive_plc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_exists_communication" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_good_data" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_open_port" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="State_Communication_Anybus" nillable="true" type="tns:State_Communication_Anybus" />
+  <xs:complexType name="State_Communication_Zumbach">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="is_exists_communication" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_good_data" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_open_port" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="State_Communication_Zumbach" nillable="true" type="tns:State_Communication_Zumbach" />
+  <xs:complexType name="Data_WCF_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data_wcf_calculate_measure" nillable="true" type="tns:Data_WCF_Calculate_Measure" />
+      <xs:element minOccurs="0" name="data_wcf_limits" nillable="true" type="tns:Data_WCF_Limits" />
+      <xs:element minOccurs="0" name="data_wcf_material" nillable="true" type="tns:Data_WCF_Material" />
+      <xs:element minOccurs="0" name="data_wcf_measure" nillable="true" type="tns:Data_WCF_Measure" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data_WCF_Result" nillable="true" type="tns:Data_WCF_Result" />
+  <xs:complexType name="Data_WCF_Calculate_Measure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count_measure_deviation" type="xs:int" />
+      <xs:element minOccurs="0" name="count_measure_diameter" type="xs:int" />
+      <xs:element minOccurs="0" name="deviation_max" type="xs:float" />
+      <xs:element minOccurs="0" name="deviation_min" type="xs:float" />
+      <xs:element minOccurs="0" name="diameter_max" type="xs:float" />
+      <xs:element minOccurs="0" name="diameter_min" type="xs:float" />
+      <xs:element minOccurs="0" name="is_bad_measure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_good_diameter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_good_ovality" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_good_straightness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ovality_max" type="xs:float" />
+      <xs:element minOccurs="0" name="straightness_max" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data_WCF_Calculate_Measure" nillable="true" type="tns:Data_WCF_Calculate_Measure" />
+  <xs:complexType name="Data_WCF_Material">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="number_job" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="number_program" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="number_semiproduct" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data_WCF_Material" nillable="true" type="tns:Data_WCF_Material" />
+  <xs:complexType name="Data_WCF_Measure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deviation" type="xs:float" />
+      <xs:element minOccurs="0" name="diameter" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data_WCF_Measure" nillable="true" type="tns:Data_WCF_Measure" />
+</xs:schema>

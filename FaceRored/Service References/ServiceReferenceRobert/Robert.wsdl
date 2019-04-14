@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Robert" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_I_WCF_Contract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8001/Robert?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8001/Robert?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8001/Robert?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Robert_KC11" />
+      <xsd:import schemaLocation="http://localhost:8001/Robert?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="I_WCF_Contract_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Connect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Disconnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_StartMeasure_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartMeasure" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Set_Limits_InputMessage">
+    <wsdl:part name="parameters" element="tns:Set_Limits" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_ReadResFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResFile" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_ReadResFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadResFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Set_Client_State_And_Measure_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Set_Client_State_And_Measure" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Set_Client_Measure_Complete_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Set_Client_Measure_Complete" />
+  </wsdl:message>
+  <wsdl:message name="I_WCF_Contract_Set_Auto_Measure_Complete_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Set_Auto_Measure_Complete" />
+  </wsdl:message>
+  <wsdl:portType name="I_WCF_Contract">
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_WCF_Contract/Connect" message="tns:I_WCF_Contract_Connect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/ConnectResponse" message="tns:I_WCF_Contract_Connect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_WCF_Contract/Disconnect" message="tns:I_WCF_Contract_Disconnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/DisconnectResponse" message="tns:I_WCF_Contract_Disconnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartMeasure">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_WCF_Contract/StartMeasure" message="tns:I_WCF_Contract_StartMeasure_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Limits">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_WCF_Contract/Set_Limits" message="tns:I_WCF_Contract_Set_Limits_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadResFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/I_WCF_Contract/ReadResFile" message="tns:I_WCF_Contract_ReadResFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/ReadResFileResponse" message="tns:I_WCF_Contract_ReadResFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Client_State_And_Measure">
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/Set_Client_State_And_Measure" message="tns:I_WCF_Contract_Set_Client_State_And_Measure_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Client_Measure_Complete">
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/Set_Client_Measure_Complete" message="tns:I_WCF_Contract_Set_Client_Measure_Complete_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Set_Auto_Measure_Complete">
+      <wsdl:output wsaw:Action="http://tempuri.org/I_WCF_Contract/Set_Auto_Measure_Complete" message="tns:I_WCF_Contract_Set_Auto_Measure_Complete_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_I_WCF_Contract" type="tns:I_WCF_Contract">
+    <wsp:PolicyReference URI="#NetTcpBinding_I_WCF_Contract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Connect">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Connect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Disconnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartMeasure">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/StartMeasure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Limits">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Set_Limits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ReadResFile">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/ReadResFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Client_State_And_Measure">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Set_Client_State_And_Measure" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Client_Measure_Complete">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Set_Client_Measure_Complete" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Set_Auto_Measure_Complete">
+      <soap12:operation soapAction="http://tempuri.org/I_WCF_Contract/Set_Auto_Measure_Complete" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Robert">
+    <wsdl:port name="NetTcpBinding_I_WCF_Contract" binding="tns:NetTcpBinding_I_WCF_Contract">
+      <soap12:address location="net.tcp://localhost:8002/Robert" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8002/Robert</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
